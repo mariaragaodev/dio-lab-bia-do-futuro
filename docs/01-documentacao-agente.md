@@ -69,8 +69,9 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Chatbot em Streamlit |
-| LLM | GPT-4 via API |
+| LLM | Modelo gpt-oss executado localmente através do Ollama |
 | Base de Conhecimento | JSON/CSV com dados do cliente |
+| Integração | Python |
 | Validação | Checagem de alucinações |
 
 ---
