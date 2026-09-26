@@ -31,12 +31,40 @@ Os demais arquivos (transacoes.csv, historico_atendimento.csv, perfil_investidor
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Existem duas possibilidades, injetar os dados diretamente no prompt (Ctrl + c, Ctrl + v) ou carregar os arquivos via código, como no exemplo abaixo: 
+```python
+import pandas as pd
+import json
 
+# CSVs
+historico = pd.read_csv("data/historico_atendimento.csv")
+transacoes = pd.read_csv("data/transacoes.csv")
+
+# JSONs
+with open ("data/perfil_investidor.json", "r", encoding='utf-8') as f:
+   perfil = json.load(f)
+with open ("data/produtos_financeiros.json", "r", encoding='utf-8') as f:
+   produtos = json.load(f)
+with open ("data/metas_financeiras.json", "r", encoding='utf-8') as f:
+   metas = json.load(f)
+
+```
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Para simplificar, podemos simplesmente "injetar" os dados em nosso prompt, garantindo que o Jay tenha o melhor contexto possível. Lembrando que, em soluções mais robustas, o ideal é que essas informações sejam carregadas dinamicamente para que possamos ganhar flexibilidade.
+
+```text
+DADOS DO CLIENTE ():
+
+PERFIL DO CLIENTE ():
+
+TRANSAÇÕES DO CLIENTE ():
+
+METAS DO CLIENTE ():
+
+PRODUTOS DISPONÍVEIS PARA ENSINO ():
+```
 
 ---
 
@@ -45,13 +73,29 @@ Os demais arquivos (transacoes.csv, historico_atendimento.csv, perfil_investidor
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+DADOS DO USUÁRIO
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
-```
+Nome: João Silva
+
+PERFIL
+Perfil: Moderado
+
+TRANSAÇÕES RECENTES
+- 01/11: Supermercado - R$ 450,00
+- 03/11: Streaming - R$ 55,00
+- 05/11: Transporte - R$ 120,00
+- 08/11: Restaurante - R$ 150,00
+
+METAS FINANCEIRAS
+- Meta: Viagem
+- Valor da meta: R$ 5.000,00
+- Valor atual: R$ 2.000,00
+- Valor restante: R$ 3.000,00
+
+HISTÓRICO DE ATENDIMENTO
+- Usuário perguntou anteriormente sobre organização de gastos.
+- Usuário demonstrou interesse em acompanhar suas metas financeiras.
+
+PRODUTOS FINANCEIROS
+- Informações disponíveis sobre produtos financeiros para fins educativos.
+- O Jay pode explicar as características dos produtos, mas não deve recomendar um produto específico ao usuário.
