@@ -33,6 +33,7 @@ flowchart TD
 **Stack:**
 - Interface: Streamlit
 - LLM: Ollama (modelo local `gpt-oss`)
+- Linguagem: Python
 - Dados: JSON/CSV mockados
 
 ## 📁 Estrutura do Projeto
@@ -42,7 +43,8 @@ flowchart TD
 │   ├── perfil_investidor.json     # Perfil do cliente
 │   ├── transacoes.csv             # Histórico financeiro
 │   ├── historico_atendimento.csv  # Interações anteriores
-│   └── produtos_financeiros.json  # Produtos para ensino
+│   ├── produtos_financeiros.json  # Produtos para ensino
+    └── meta_financeira.json       # Meta do cliente
 │
 ├── docs/                          # Documentação completa
 │   ├── 01-documentacao-agente.md  # Caso de uso e persona
@@ -71,7 +73,7 @@ ollama serve
 pip install streamlit pandas requests
 ```
 
-### 3. Rodar o Edu
+### 3. Rodar o Jay
 
 ```bash
 streamlit run src/app.py
@@ -79,11 +81,14 @@ streamlit run src/app.py
 
 ## 🎯 Exemplo de Uso
 
-**Pergunta:** "O que é CDI?"  
-**Edu:** "CDI é uma taxa de referência usada pelos bancos. Quando um investimento rende '100% do CDI', significa que ele acompanha essa taxa. Hoje o CDI está próximo da Selic. Quer que eu explique a diferença entre os dois?"
+**Pergunta:** "Quanto gastei com alimentação?"
+**Jay:** "Pelos dados disponíveis, você gastou R$ 570,00 com alimentação. Esse valor considera as transações registradas nessa categoria."
 
-**Pergunta:** "Onde estou gastando mais?"  
-**Edu:** "Olhando suas transações de outubro, sua maior despesa é moradia (R$ 1.380), seguida de alimentação (R$ 570). Juntas, representam quase 80% dos seus gastos. Isso é bem comum! Quer que eu explique algumas estratégias de organização?"
+**Pergunta:** "Como está minha meta de viagem?"
+**Jay:** "Sua meta é de R$ 3.000,00 e você já alcançou R$ 1.200,00. Isso representa 40% da sua meta. Ainda faltam R$ 1.800,00."
+
+**Pergunta:** "Qual investimento você recomenda?"
+**Jay:** "Eu posso explicar como diferentes investimentos funcionam, mas não posso recomendar um investimento específico. Posso te ajudar a entender os conceitos e características dos produtos financeiros."
 
 ## 📊 Métricas de Avaliação
 
@@ -95,12 +100,9 @@ streamlit run src/app.py
 
 ## 🎬 Diferenciais
 
-- **Personalização:** Usa os dados do próprio cliente nos exemplos
+- **Personalização:** Utiliza os dados do usuário para contextualizar as respostas
 - **100% Local:** Roda com Ollama, sem enviar dados para APIs externas
-- **Educativo:** Foco em ensinar, não em vender produtos
-- **Seguro:** Estratégias de anti-alucinação documentadas
-
-
-
-
+- **Educativo:** O foco é ensinar e ajudar na organização financeira
+- **Metas:** Permite acompanhar o progresso dos objetivos financeiros
+- **Seguro:** Possui regras para evitar alucinações e recomendações de investimentos
 
