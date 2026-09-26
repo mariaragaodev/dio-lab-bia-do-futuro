@@ -1,5 +1,9 @@
 # Documentação do Agente
 
+>[!TIP]
+> **Prompt usado para esta etapa:**
+> Crie a documentação de um agente chamado "Jay", um assistente de educação e organização financeira que pode analisar gastos, explicar conceitos e acompanhar metas, mas não recomenda investimentos. Tem tom informal e didático e não julga os gastos do usuário. Preencha o template abaixo.
+> [cole ou anexe o template 01-documentacao-agente.md pra contexto]
 ## Caso de Uso
 
 ### Problema
