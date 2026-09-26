@@ -4,16 +4,13 @@
 
 Para o funcionamento do Jay, serão utilizados dados financeiros fictícios e estruturados, com o objetivo de simular a realidade financeira dos usuários. Os dados são utilizados para contextualizar as respostas do agente e auxiliar na organização financeira.
 
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Para que serve no Jay? |
 |---------|---------|---------------------|
 | `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+| `perfil_investidor.json` | JSON | Personalizar as explicações das dúvidas |
+| `produtos_financeiros.json` | JSON | Conhecer os produtos para que possam ser explicados ao usuário |
+| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente e usar as informações de forma didática |
 | `metas_financeiras.json` | JSON | Consultar e acompanhar as metas financeiras do usuário |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
 
 ---
 
