@@ -1,0 +1,34 @@
+{
+  "metas_financeiras": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "nome": "Viagem",
+      "descricao": "Economizar para uma viagem de férias",
+      "valor_meta": 3000.00,
+      "valor_atual": 1200.00,
+      "prazo_meses": 6,
+      "status": "em_andamento"
+    },
+    {
+      "id": 2,
+      "usuario_id": 1,
+      "nome": "Reserva de emergência",
+      "descricao": "Criar uma reserva para situações inesperadas",
+      "valor_meta": 5000.00,
+      "valor_atual": 2000.00,
+      "prazo_meses": 12,
+      "status": "em_andamento"
+    },
+    {
+      "id": 3,
+      "usuario_id": 2,
+      "nome": "Curso",
+      "descricao": "Guardar dinheiro para realizar um curso",
+      "valor_meta": 1500.00,
+      "valor_atual": 900.00,
+      "prazo_meses": 4,
+      "status": "em_andamento"
+    }
+  ]
+}
